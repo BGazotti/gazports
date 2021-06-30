@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+# Copyright 1999-2021 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+# This is the OpenRC service file for spotifyd.
+
+name="Spotifyd daemon"
+pidfile=${RC_PREFIX}/var/run/spotifyd/pid
+
+command=/usr/bin/spotifyd
+command_background="true"
+command_args=--no-daemon  #sane defaults here
+
+depend() {
+	use net
+	use dns
+}
