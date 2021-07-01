@@ -9,7 +9,8 @@ DESCRIPTION="A Spotify daemon"
 
 HOMEPAGE="https://github.com/Spotifyd/spotifyd"
 
-SRC_URI="https://github.com/Spotifyd/spotifyd/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/Spotifyd/spotifyd/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
+		https://raw.githubusercontent.com/BGazotti/gazports/main/media-sound/spotifyd/files/spotifyd"
 
 # Source directory; the dir where the sources can be found (automatically
 # unpacked) inside ${WORKDIR}.  The default value for S is ${WORKDIR}/${P}
@@ -77,7 +78,7 @@ src_install() {
 		doins "${S}"/contrib/spotifyd.service
 	else
 		einfo "Copying OpenRC service file to init.d"
-		doinitd spotifyd
+		doinitd $DISTDIR/spotifyd
 	fi
 	# install spotifyd binary
 	dobin "${S}"/target/release/spotifyd
