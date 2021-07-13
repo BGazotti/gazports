@@ -76,9 +76,6 @@ src_install() {
 		dodir $USERSERVICEDIR
 		insinto $USERSERVICEDIR
 		doins "${S}"/contrib/spotifyd.service
-	else
-		einfo "Copying OpenRC service file to init.d"
-		doinitd $DISTDIR/spotifyd
 	fi
 	# install spotifyd binary
 	dobin "${S}"/target/release/spotifyd

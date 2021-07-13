@@ -12,7 +12,7 @@
 	</longdescription>
 	<use>
 		<flag name="dbus">Enables multimedia key integration and keyring support</flag>
-		<flag name="systemd">Enables starting the daemon via a provided .service file</flag>
+		<flag name="systemd">Installs a .service file to /etc/systemd/user/</flag>
 		<flag name="pulseaudio">Enables the pulseaudio backend</flag>
 		<flag name="alsa">Enables the alsa backend</flag>
 		<flag name="portaudio">Enables the pulseaudio backend</flag>
